@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gerador de Números da Mega</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333333;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gerador de Números da Mega</h1>
+  <button onclick="gerarNumeros()">Gerar Números da Mega</button>
+  <div class="result" id="resultado"></div>
+
+  <script>
+    function gerarNumeros() {
+      var numeros = [];
+
+      while (numeros.length < 6) {
+        var numero = Math.floor(Math.random() * 60) + 1;
+
+        if (numeros.indexOf(numero) === -1) {
+          numeros.push(numero);
+        }
+      }
+
+      document.getElementById("resultado").textContent = "Números gerados: " + numeros.join(", ");
+    }
+  </script>
+</body>
+</html>
